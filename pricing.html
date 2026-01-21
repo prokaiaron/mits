@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <style>
+        
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bahnschrift';
+  color: white;
+}
+
+/* Navbar background */
+.navbar {
+  background: linear-gradient(90deg, #040418, #523ccf);
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+/* Inner container */
+.navbar-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  color: #00bfff;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.logo-text {
+  font-size: 18px;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding-bottom: 6px;
+  position: relative;
+}
+
+/* Hover & active underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00bfff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Pricing Section */
+.pricing-section {
+    background: linear-gradient(180deg, #040418, #523ccf);
+    padding: 60px 20px;
+    min-height: 100vh;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pricing-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.pricing-header p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+.pricing-highlight {
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.15) 0%, rgba(107, 93, 212, 0.15) 100%);
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-highlight h3 {
+    font-size: 16px;
+    color: #00bfff;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.pricing-highlight p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.pricing-card {
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.3) 0%, rgba(49, 27, 87, 0.5) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 12px;
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.5) 0%, rgba(49, 27, 87, 0.7) 100%);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.3);
+    border-color: rgba(139, 92, 246, 0.7);
+}
+
+.pricing-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00bfff, #6b5dd4);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.pricing-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.pricing-subtitle {
+    font-size: 14px;
+    color: #00bfff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.pricing-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.pricing-currency {
+    font-size: 24px;
+    color: #00bfff;
+    font-weight: 700;
+}
+
+.pricing-value {
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.pricing-period {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.pricing-features {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-features li::before {
+    content: "✓";
+    color: #00bfff;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #00bfff, #6b5dd4);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+}
+
+.faq-section {
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.2) 0%, rgba(49, 27, 87, 0.3) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 12px;
+    padding: 40px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-section h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-question {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00bfff;
+    margin-bottom: 10px;
+}
+
+.faq-answer {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+/* Tablet breakpoint - 768px */
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .pricing-header h1 {
+        font-size: 36px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .pricing-title {
+        font-size: 20px;
+    }
+
+    .pricing-value {
+        font-size: 36px;
+    }
+
+    .faq-section {
+        padding: 30px 20px;
+    }
+
+    .faq-section h3 {
+        font-size: 24px;
+    }
+}
+
+/* Mobile breakpoint - 320px */
+@media (max-width: 320px) {
+    .pricing-section {
+        padding: 40px 15px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pricing-header h1 {
+        font-size: 28px;
+    }
+
+    .pricing-header p {
+        font-size: 14px;
+    }
+
+    .pricing-card {
+        padding: 20px 15px;
+    }
+
+    .pricing-title {
+        font-size: 18px;
+    }
+
+    .pricing-value {
+        font-size: 32px;
+    }
+
+    .pricing-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+    }
+
+    .pricing-highlight {
+        padding: 15px 20px;
+        margin-bottom: 40px;
+    }
+
+    .faq-section {
+        padding: 20px 15px;
+    }
+
+    .faq-section h3 {
+        font-size: 20px;
+    }
+
+    .faq-question {
+        font-size: 14px;
+    }
+
+    .faq-answer {
+        font-size: 13px;
+    }
+}
+        
+    </style>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="navbar-inner">
+
+        <!-- Logo -->
+        <div class="logo">
+            <span class="logo-icon">◆</span>
+            <span class="logo-text">BRAND</span>
+        </div>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="product.html">PRODUCT</a></li>
+            <li><a href="pricing.html" class="active">PRICING</a></li>
+            <li><a href="team.html">TEAM</a></li>
+        </ul>
+
+        </div>
+    </nav>
+    </header>
+
+    <section class="pricing-section">
+        <div class="pricing-container">
+            <div class="pricing-header">
+                <h1>Transparent Pricing</h1>
+                <p>Simple, fair pricing for everyone</p>
+            </div>
+
+            <div class="pricing-highlight">
+                <h3>NO HIDDEN COSTS</h3>
+                <p>Same price for everyone. Pay only for what you use, based on per-second billing. No tiers, no surprises.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- ChatterBlast -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">💬</div>
+                    <h2 class="pricing-title">ChatterBlast</h2>
+                    <p class="pricing-subtitle">Chat API</p>
+                    
+                    <div class="pricing-amount">
+                        <span class="pricing-currency">$</span>
+                        <span class="pricing-value">0.0015</span>
+                    </div>
+                    <p class="pricing-period">per second</p>
+
+                    <ul class="pricing-features">
+                        <li>Conversational AI</li>
+                        <li>Customizable</li>
+                        <li>Natural Language Processing</li>
+                        <li>Secure Data Processing</li>
+                    </ul>
+
+                    <button class="cta-button">Get Started</button>
+                </div>
+
+                <!-- DreamWeaver -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">🎨</div>
+                    <h2 class="pricing-title">DreamWeaver</h2>
+                    <p class="pricing-subtitle">Image Generation API</p>
+                    
+                    <div class="pricing-amount">
+                        <span class="pricing-currency">$</span>
+                        <span class="pricing-value">0.0500</span>
+                    </div>
+                    <p class="pricing-period">per second</p>
+
+                    <ul class="pricing-features">
+                        <li>Fully Customizable</li>
+                        <li>Variety of Styles</li>
+                        <li>High Resolution</li>
+                        <li>Batch Processing</li>
+                    </ul>
+
+                    <button class="cta-button">Get Started</button>
+                </div>
+
+                <!-- MindReader -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">👁️</div>
+                    <h2 class="pricing-title">MindReader</h2>
+                    <p class="pricing-subtitle">Image Recognition API</p>
+                    
+                    <div class="pricing-amount">
+                        <span class="pricing-currency">$</span>
+                        <span class="pricing-value">0.0350</span>
+                    </div>
+                    <p class="pricing-period">per second</p>
+
+                    <ul class="pricing-features">
+                        <li>Object Recognition</li>
+                        <li>Scene Recognition</li>
+                        <li>Text Detection</li>
+                        <li>Face Recognition</li>
+                    </ul>
+
+                    <button class="cta-button">Get Started</button>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h3>Frequently Asked Questions</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How does per-second billing work?</div>
+                    <div class="faq-answer">You only pay for the exact seconds your API is being used. Every second of usage is billed at the rate shown. No minimum charges, no monthly fees.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is there a free trial?</div>
+                    <div class="faq-answer">Yes! Sign up and get $10 in free credits to test all our APIs. Perfect for evaluating which service works best for your needs.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are there discounts for high volume?</div>
+                    <div class="faq-answer">Everyone gets the same transparent pricing. However, we offer dedicated support and infrastructure optimization for enterprise customers.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I combine multiple APIs?</div>
+                    <div class="faq-answer">Absolutely! Mix and match our APIs in your application. Each API is billed separately based on your usage.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
