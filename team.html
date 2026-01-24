@@ -16,7 +16,6 @@ body {
   color: white;
 }
 
-/* Navbar background */
 .navbar {
   background: linear-gradient(90deg, #040418, #523ccf);
   height: 80px;
@@ -24,7 +23,6 @@ body {
   align-items: center;
 }
 
-/* Inner container */
 .navbar-inner {
   width: 100%;
   max-width: 1200px;
@@ -52,7 +50,6 @@ body {
   font-size: 18px;
 }
 
-/* Navigation links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -71,7 +68,6 @@ body {
   position: relative;
 }
 
-/* Hover & active underline */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -88,7 +84,6 @@ body {
   width: 100%;
 }
 
-/* Team Section */
 .team-section {
     background: linear-gradient(180deg, #040418, #523ccf);
     padding: 60px 20px;
@@ -225,7 +220,6 @@ body {
     line-height: 1.6;
 }
 
-/* Tablet breakpoint - 768px */
 @media (max-width: 768px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -251,7 +245,6 @@ body {
     }
 }
 
-/* Mobile breakpoint - 320px */
 @media (max-width: 320px) {
     .team-section {
         padding: 40px 15px;
@@ -315,13 +308,11 @@ body {
     <nav class="navbar">
         <div class="navbar-inner">
 
-        <!-- Logo -->
         <div class="logo">
             <span class="logo-icon">◆</span>
             <span class="logo-text">BRAND</span>
         </div>
 
-        <!-- Navigation -->
         <ul class="nav-links">
             <li><a href="index.html">HOME</a></li>
             <li><a href="product.html">PRODUCT</a></li>
@@ -343,7 +334,7 @@ body {
             <div class="team-grid">
                 <!-- John Smith -->
                 <div class="team-member">
-                    <div class="member-image">👔</div>
+                    <div class="member-image"><img src="assets/images/albert-dera-ILip77SbmOE-unsplash.jpg" alt=""></div>
                     <h2 class="member-name">John Smith</h2>
                     <p class="member-role">Founder & CEO</p>
                     <p class="member-bio">John is the driving force behind the company. With a deep understanding of AI's transformative potential, he founded the company to create solutions that make a positive impact on society.</p>
@@ -351,7 +342,7 @@ body {
 
                 <!-- Emily Chen -->
                 <div class="team-member">
-                    <div class="member-image">⚙️</div>
+                    <div class="member-image"><img src="assets/images/connor-wilkins-2crxTr4jCkc-unsplash.jpg" alt=""></div>
                     <h2 class="member-name">Emily Chen</h2>
                     <p class="member-role">Chief Technology Officer</p>
                     <p class="member-bio">Emily is our tech wizard, leading the charge in AI research and development. Her passion for pushing the boundaries of what AI can achieve is matched only by her dedication to ethical AI solutions.</p>
@@ -359,7 +350,7 @@ body {
 
                 <!-- Sarah Rodriguez -->
                 <div class="team-member">
-                    <div class="member-image">🎯</div>
+                    <div class="member-image"><img src="assets/images/jake-nackos-IF9TK5Uy-KI-unsplash.jpg" alt=""></div>
                     <h2 class="member-name">Sarah Rodriguez</h2>
                     <p class="member-role">Chief Marketing Officer</p>
                     <p class="member-bio">Sarah is the creative powerhouse behind our brand. She knows that AI can change the world, and she's on a mission to make sure everyone knows it too. Her marketing strategies help us reach new heights.</p>
@@ -367,7 +358,7 @@ body {
 
                 <!-- David Walker -->
                 <div class="team-member">
-                    <div class="member-image">🎨</div>
+                    <div class="member-image"><img src="assets/images/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt=""></div>
                     <h2 class="member-name">David Walker</h2>
                     <p class="member-role">Head of Product</p>
                     <p class="member-bio">David's ability to transform AI concepts into user-friendly products is unparalleled. He ensures that our AI solutions work seamlessly and enhance the lives of our users.</p>
@@ -375,7 +366,7 @@ body {
 
                 <!-- Lisa Martin -->
                 <div class="team-member">
-                    <div class="member-image">🔬</div>
+                    <div class="member-image"><img src="assets/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.jpg" alt=""></div>
                     <h2 class="member-name">Lisa Martin</h2>
                     <p class="member-role">AI Research Scientist</p>
                     <p class="member-bio">Lisa's boundless curiosity drives our AI innovation. She's always exploring new frontiers in AI, pushing the boundaries of what's possible. Her work is the cornerstone of our technological advancements.</p>
@@ -421,5 +412,9 @@ body {
             </div>
         </div>
     </section>
+
+     <footer style="background-color: #1a1a1a; color: #ffffff; text-align: center; padding: 40px; font-size: 14px;">
+        <p>&copy; 2026 Brand Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>

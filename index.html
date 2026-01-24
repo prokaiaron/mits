@@ -3,50 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 
     <style>
-/* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
 
-/* Layout blocks */
 .grid-container { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .grid-main { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; }
 
-/* Hero text */
 .title { font-size: 40px; padding-top: 140px; text-align: center; }
 .motto { font-size: 25px; padding-top: 20px; text-align: center; }
 
-/* Button group */
 .button-section-grid { display: flex; gap: 50px; justify-content: center; align-items: center; max-width: 1200px; margin: 0 auto; }
 
-/* Navbar */
 .navbar { background: linear-gradient(90deg, #040418, #523ccf); height: 80px; display: flex; align-items: center; }
 .navbar-inner { width: 100%; max-width: 1200px; margin: 0 auto; position: relative; display: flex; align-items: center; }
 
-/* Logo */
 .logo { display: flex; align-items: center; color: #ffffff; font-weight: bold; letter-spacing: 1px; }
 .logo-icon { color: #00bfff; margin-right: 8px; font-size: 18px; }
 .logo-text { font-size: 18px; }
 
-/* Centered nav links */
 .nav-links { list-style: none; display: flex; gap: 30px; position: absolute; left: 50%; transform: translateX(-50%); }
 .nav-links a { text-decoration: none; color: #ffffff; font-size: 18px; letter-spacing: 1px; padding-bottom: 6px; position: relative; }
 .nav-links a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background-color: #00bfff; transition: width 0.3s ease; }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-/* Banner */
-.banner_div { background-image: url(img/sergey-pesterev-JV78PVf3gGI-unsplash.jpg); background-position: center; height: 400px; }
+.banner_div { background-image: url(img/sergey-pesterev-JV78PVf3gGI-unsplash.jpg); background-position: center; height: 400px; background-repeat: no-repeat; background-size: cover;}
 
-/* Description cards */
-.description_grid { background: linear-gradient(180deg, #040418, #523ccf); text-align: center; }
+.description_grid { background: linear-gradient(180deg, #040418, #523ccf); text-align: center; padding-top: 20px;}
 .card { padding: 20px; text-align: left; }
 .desc_sub { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 20px; margin: 0 10px; padding: 15px 0; flex-direction: column; position: relative; }
-.desc_sub::before { content: ''; position: absolute; inset: 0; background-image: url(assets/illustrations/undraw_analysis_dq08.svg); background-position: center; background-repeat: no-repeat; background-size: contain; opacity: 0.15; pointer-events: none; z-index: 0; }
-.desc_sub p { position: relative; z-index: 1; }
 
-/* Diamond stat cards */
 .diamond-stats-wrapper {
     background: linear-gradient(0deg, #040418, #523ccf);
     min-height: 100vh;
@@ -78,30 +66,25 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
 .diamond-stats-icon img { width:100%; height:100%; }
 .diamond-stats-title { font-size:25px; color:#fff; font-weight:600; text-shadow:0 2px 10px rgba(0,0,0,0.5); }
 
-/* Slider */
 .content-slider { position: relative; overflow: hidden; width: 100%; }
 .content-wrapper { display:flex; width:300%; transition: transform .6s ease-in-out; }
 .slide-content { width: 33.333%; flex-shrink: 0; margin-bottom: -20px;}
 
-/* Radio-driven slider transforms */
 #btn1:checked ~ .banner-wrapper .content-wrapper { transform: translateX(0%); }
 #btn2:checked ~ .banner-wrapper .content-wrapper { transform: translateX(-33.333%); }
 #btn3:checked ~ .banner-wrapper .content-wrapper { transform: translateX(-66.666%); }
 
-/* Buttons */
 .banner-btn {
-    padding: 12px 24px; font-size:16px; font-weight:600; border:2px solid white; border-radius:5px; cursor:pointer;
+    padding: 12px 24px; font-size:16px; font-weight:600; border:2px solid #00bfff; border-radius:5px; cursor:pointer;
     background-color:#523ccf; color:white; text-align:center; transition: all .3s ease;
 }
 .banner-btn:hover { background-color:#6d4ee6; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(82,60,207,0.3); }
 #btn1:checked ~ .banner-wrapper .banner-btn[for="btn1"], #btn2:checked ~ .banner-wrapper .banner-btn[for="btn2"], #btn3:checked ~ .banner-wrapper .banner-btn[for="btn3"] {
-    background-color:#6d4ee6; border-color:white; box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    background-color:#6d4ee6; border-color:#00bfff; box-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
 
-/* Button section background */
-.button-section { background: linear-gradient(90deg, #040418, #523ccf); padding: 30px 20px; border-bottom: 5px solid white; }
+.button-section { background: linear-gradient(90deg, #040418, #523ccf); padding: 30px 20px; border-bottom: 5px solid #00bfff; }
 
-/* Responsive adjustments */
 @media (min-width: 360px) {
     .grid-container { grid-template-columns: repeat(2,1fr); grid-template-rows: auto auto; }
     .title { padding-left: 20%; text-align: left; }
@@ -137,13 +120,11 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
     <nav class="navbar">
         <div class="navbar-inner">
 
-        <!-- Logo -->
         <div class="logo">
             <span class="logo-icon">◆</span>
             <span class="logo-text">BRAND</span>
         </div>
 
-        <!-- Navigation -->
         <ul class="nav-links">
             <li><a href="#" class="active">HOME</a></li>
             <li><a href="product.html">PRODUCT</a></li>
@@ -158,7 +139,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
 
   <div class="banner_div">
     <h1 class="title">Brand name - API Provider</h1>
-    <h4 class="motto">APIs made just for your application!</h4>
+    <h2 class="motto">APIs made just for your application!</h2>
   </div>
 
     <div>
@@ -284,7 +265,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-customizable-full.svg" alt="Fully Customizable">
+                                            <img src="assets/icons/feather/user.svg" alt="Conversational AI">
                                         </div>
                                         <div class="diamond-stats-title">Fully Customizable</div>
                                     </div>
@@ -295,7 +276,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-styles.svg" alt="Variety of Styles">
+                                            <img src="assets/icons/feather/settings.svg" alt="Customizable">
                                         </div>
                                         <div class="diamond-stats-title">Variety of Styles</div>
                                     </div>
@@ -306,7 +287,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-resolution.svg" alt="High Resolution">
+                                            <img src="assets/icons/feather/message-square.svg" alt="Natural Language Processing">
                                         </div>
                                         <div class="diamond-stats-title">High Resolution</div>
                                     </div>
@@ -317,7 +298,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-batch.svg" alt="Batch Processing">
+                                            <img src="assets/icons/feather/shield.svg" alt="Secure Data Processing">
                                         </div>
                                         <div class="diamond-stats-title">Batch Processing</div>
                                     </div>
@@ -359,7 +340,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-object-recognition.svg" alt="Object Recognition">
+                                            <img src="assets/icons/feather/user.svg" alt="Conversational AI">
                                         </div>
                                         <div class="diamond-stats-title">Object Recognition</div>
                                     </div>
@@ -370,7 +351,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-scene-recognition.svg" alt="Scene Recognition">
+                                            <img src="assets/icons/feather/settings.svg" alt="Customizable">
                                         </div>
                                         <div class="diamond-stats-title">Scene Recognition</div>
                                     </div>
@@ -381,7 +362,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-text-detection.svg" alt="Text Detection">
+                                            <img src="assets/icons/feather/message-square.svg" alt="Natural Language Processing">
                                         </div>
                                         <div class="diamond-stats-title">Text Detection</div>
                                     </div>
@@ -392,7 +373,7 @@ body { font-family: 'Bahnschrift', sans-serif; color: #fff; }
                                 <div class="diamond-stats-inner">
                                     <div class="diamond-stats-content">
                                         <div class="diamond-stats-icon">
-                                            <img src="assets/icon-face-recognition.svg" alt="Face Recognition">
+                                            <img src="assets/icons/feather/shield.svg" alt="Secure Data Processing">
                                         </div>
                                         <div class="diamond-stats-title">Face Recognition</div>
                                     </div>
